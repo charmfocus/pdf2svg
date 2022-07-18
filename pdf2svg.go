@@ -1,12 +1,11 @@
 package pdf2svg
 
 import (
-	"bytes"
 	"io"
 	"os"
 )
 
-func Convert(reader io.Reader) (io.ReadSeeker, error) {
+func Convert(reader io.Reader) ([]byte, error) {
 	pdfFile, err := os.CreateTemp("", "pdf2svg_*.pdf")
 	if err != nil {
 		return nil, err
@@ -30,5 +29,5 @@ func Convert(reader io.Reader) (io.ReadSeeker, error) {
 		return nil, err
 	}
 
-	return bytes.NewReader(svgData), nil
+	return svgData, nil
 }
