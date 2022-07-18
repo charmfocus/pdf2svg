@@ -1,3 +1,3 @@
-module gitee.com/shishshinedone/pdf2svg
+module github.com/charmfocus/pdf2svg
 
-go 1.17
+go 1.18
